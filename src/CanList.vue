@@ -5,6 +5,7 @@
     <v-menu v-model="contextMenu.shown" :position-x="contextMenu.x" :position-y="contextMenu.y" absolute  >        
         <v-list>
             <v-list-item @click="showNewCanAddressDialog = true">Update CAN Address</v-list-item>
+            <v-list-item @click="runM122">M122</v-list-item>
         </v-list>
     </v-menu>
 </div>    
@@ -40,6 +41,11 @@ export default {
                 {
                     text: 'Firmware Version',
                     value: 'firmwareVersion',
+                    sortable: true,
+                },
+                {
+                    text: 'Firmware Date',
+                    value: 'firmwareDate',
                     sortable: true,
                 },
                 {
@@ -96,6 +102,10 @@ export default {
               await this.sendCode(`M952 B${this.selectedBoard.canAddress} A${value}`);
               
             }
+        },
+        async runM122(value) {
+            await this.sendCode(`M122 B${this.selectedBoard.canAddress}`);
+            this.$router.push("/Console");
         }
     }
 }

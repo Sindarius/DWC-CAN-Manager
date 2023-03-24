@@ -2,8 +2,8 @@
   "id": "CANManager",
   "name": "CAN Manager",
   "author": "Juan Rosario",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "LGPL-3.0-or-later",
   "homepage": "https://github.com/Sindarius/CANManager",
-  "dwcVersion": "3.4"
+  "dwcVersion": "3.5"
 }
